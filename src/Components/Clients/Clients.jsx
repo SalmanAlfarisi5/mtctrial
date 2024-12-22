@@ -9,11 +9,9 @@ const Clients = () => {
         {clientsData.map((client, index) => (
           <div className="client" key={index}>
             <img src={client.image} alt={client.name} />
-            <p>{client.name}</p>
           </div>
         ))}
       </div>
-      <button className="btn dark-btn">See more here</button>
     </div>
   );
 };

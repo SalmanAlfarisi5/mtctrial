@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ChatbotWidget.css";
-import robotIcon from "../../assets/robot-icon.png";
+import robotIcon from "/assets/robot/robot-icon.png";
 
 const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
