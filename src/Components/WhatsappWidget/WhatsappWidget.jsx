@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./WhatsappWidget.css";
-import whatsappIcon from "../../assets/whatsapp-icon.png";
+import whatsappIcon from "../../../assets/whatsapp-icon.png";
 
 const WhatsappWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
