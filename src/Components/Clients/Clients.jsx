@@ -35,7 +35,6 @@ const Clients = () => {
           </div>
         ))}
       </div>
-      <button className="btn dark-btn">See more here</button>
     </div>
   );
 };
