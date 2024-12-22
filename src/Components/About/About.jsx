@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./About.css";
-import about_img from "../../../assets/about.png";
+import about_img from "../../assets/about.png";
 
 const About = () => {
   const [modalVisible, setModalVisible] = useState(false);

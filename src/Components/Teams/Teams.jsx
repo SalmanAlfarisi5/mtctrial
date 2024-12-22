@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./Teams.css";
-import next_icon from "../../../assets/next-icon.png";
-import back_icon from "../../../assets/back-icon.png";
+import next_icon from "../../assets/next-icon.png";
+import back_icon from "../../assets/back-icon.png";
 import teamData from "../../data/team.json";
 
 const Teams = () => {
