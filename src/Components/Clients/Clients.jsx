@@ -9,19 +9,17 @@ import photo6 from "../../assets/photo-6.png";
 import photo7 from "../../assets/photo-7.png";
 import photo8 from "../../assets/photo-8.png";
 import photo9 from "../../assets/photo-9.png";
-import photo10 from "../../assets/photo-10.png";
 
 const clientsData = [
-  { image: photo1, name: "Rekamitra Sukses Investama" },
-  { image: photo2, name: "Rekamitra Cipta Tambang" },
-  { image: photo3, name: "Prakasita Citra Buana" },
-  { image: photo4, name: "Garsindo Engineering Equipment" },
+  { image: photo1, name: "Arsolusi Consulting Group" },
+  { image: photo2, name: "Cinta Puri Pratama" },
+  { image: photo3, name: "Garsindo Engineering Equipment" },
+  { image: photo4, name: "CV. Rahmania Bagaskara Gemilang" },
   { image: photo5, name: "Amanah Tour" },
-  { image: photo6, name: "CV. Rahmania Bagaskara Gemilang" },
-  { image: photo7, name: "Arsolusi Consulting Group" },
-  { image: photo8, name: "Cinta Puri Pratama" },
+  { image: photo6, name: "Prakasita Citra Buana" },
+  { image: photo7, name: "Rekamitra Cipta Tambang" },
+  { image: photo8, name: "Rekamitra Sukses Investama" },
   { image: photo9, name: "PT. Transworld Solution" },
-  { image: photo10, name: "Others" },
 ];
 
 const Clients = () => {
@@ -31,7 +29,6 @@ const Clients = () => {
         {clientsData.map((client, index) => (
           <div className="client" key={index}>
             <img src={client.image} alt={client.name} />
-            <p>{client.name}</p>
           </div>
         ))}
       </div>
