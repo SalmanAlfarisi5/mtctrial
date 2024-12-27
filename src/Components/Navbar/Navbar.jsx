@@ -1,29 +1,45 @@
-import React, { useState } from 'react';
-import './Navbar.css';
-import logo from '../../assets/logo.png';
-import menu_icon from '../../assets/menu-icon.png';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import "./Navbar.css";
+import logo from "../../assets/logo.png";
+import menu_icon from "../../assets/menu-icon.png";
+import { Link } from "react-router-dom";
+import { useLanguage } from "../../LanguageContext";
+import usaFlag from "../../assets/usa-flag.png";
+import indonesiaFlag from "../../assets/indonesia-flag.png";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const location = useLocation();
+  const { language, toggleLanguage } = useLanguage();
 
-  // Toggle mobile menu
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);
   };
 
   return (
-    <nav className={`container ${location.pathname !== '/' ? 'dark-nav' : ''}`}>
+    <nav className="container">
       <img src={logo} alt="Logo" className="logo" />
-      <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/programs">Programs</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/clients">Clients</Link></li>
-        <li><Link to="/teams">Teams</Link></li>
-        <li><Link to="/contact" className="btn">Contact Us</Link></li>
+      <ul className={mobileMenu ? "" : "hide-mobile-menu"}>
+        <li><Link to="/">{language === "en" ? "Home" : "Beranda"}</Link></li>
+        <li><Link to="/programs">{language === "en" ? "Programs" : "Program"}</Link></li>
+        <li><Link to="/about">{language === "en" ? "About" : "Tentang Kami"}</Link></li>
+        <li><Link to="/clients">{language === "en" ? "Clients" : "Klien"}</Link></li>
+        <li><Link to="/teams">{language === "en" ? "Teams" : "Tim Kami"}</Link></li>
+        <li><Link to="/contact">{language === "en" ? "Contact Us" : "Kontak Kami"}</Link></li>
       </ul>
+      <div className="language-switcher">
+        <img
+          src={usaFlag}
+          alt="English"
+          className={`flag ${language === "en" ? "active" : ""}`}
+          onClick={() => toggleLanguage("en")}
+        />
+        <img
+          src={indonesiaFlag}
+          alt="Indonesian"
+          className={`flag ${language === "id" ? "active" : ""}`}
+          onClick={() => toggleLanguage("id")}
+        />
+      </div>
       <img src={menu_icon} alt="Menu" className="menu-icon" onClick={toggleMenu} />
     </nav>
   );
