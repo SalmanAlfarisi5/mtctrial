@@ -17,7 +17,6 @@ const App = () => {
     <Router>
       <Navbar />
       <MainContent />
-      {/* Chatbot and Whatsapp Widget displayed globally */}
       <ChatbotWidget />
       <WhatsappWidget />
     </Router>
