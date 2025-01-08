@@ -3,11 +3,11 @@ import './Hero.css';
 import { useLanguage } from '../../LanguageContext';
 
 const Hero = () => {
-  const { language } = useLanguage(); // Get the current language
+  const { language } = useLanguage(); 
 
   return (
-    <div className="hero container">
-      <div className="hero-text">
+    <div className="Hero container">
+      <div className="Hero-text">
         <h1>
           {language === "en"
             ? "Tax Consultation for your Businesses"

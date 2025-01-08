@@ -5,7 +5,7 @@ import { useLanguage } from "../../LanguageContext";
 
 const About = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  const { language } = useLanguage(); // Get the current language
+  const { language } = useLanguage(); 
 
   const openModal = () => {
     setModalVisible(true);

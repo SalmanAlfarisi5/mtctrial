@@ -146,7 +146,7 @@ const programsData = {
 const Programs = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState({ title: "", text: "" });
-  const { language } = useLanguage(); // Get the current language
+  const { language } = useLanguage(); 
 
   const openModal = (title, text) => {
     setModalContent({ title, text });

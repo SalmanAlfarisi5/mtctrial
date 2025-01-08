@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
-import Hero from './Components/Hero/Hero';
+import Landing from './Components/Landing/Landing';
 import Programs from './Components/Programs/Programs';
 import Title from './Components/Title/Title';
 import About from './Components/About/About';
@@ -29,7 +29,7 @@ const MainContent = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Landing />} />
         <Route
           path="/programs"
           element={
@@ -68,7 +68,6 @@ const MainContent = () => {
           }
         />
       </Routes>
-      {/* Footer displayed on every page except the landing page */}
       {location.pathname !== '/' && <Footer />}
     </>
   );
