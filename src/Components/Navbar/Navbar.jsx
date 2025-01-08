@@ -22,7 +22,6 @@ const Navbar = () => {
         <ul className={mobileMenu ? "" : "hide-mobile-menu"}>
           <li><Link to="/">{language === "en" ? "Home" : "Beranda"}</Link></li>
           <li><Link to="/programs">{language === "en" ? "Programs" : "Program"}</Link></li>
-          <li><Link to="/about">{language === "en" ? "About" : "Tentang Kami"}</Link></li>
           <li><Link to="/clients">{language === "en" ? "Clients" : "Klien"}</Link></li>
           <li><Link to="/teams">{language === "en" ? "Teams" : "Tim Kami"}</Link></li>
           <li><Link to="/contact">{language === "en" ? "Contact Us" : "Kontak Kami"}</Link></li>

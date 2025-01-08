@@ -68,7 +68,7 @@ const MainContent = () => {
           }
         />
       </Routes>
-      {location.pathname !== '/' && <Footer />}
+      <Footer/>
     </>
   );
 };
