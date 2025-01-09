@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 import menu_icon from '../../assets/menu-icon.png';
@@ -11,13 +11,37 @@ const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const location = useLocation();
   const { language, toggleLanguage } = useLanguage();
+  const [isDark, setIsDark] = useState(false);
 
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);
   };
 
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutSection = document.getElementById('about');
+      if (!aboutSection) return;
+  
+      const aboutPosition = aboutSection.getBoundingClientRect().top;
+  
+      if (aboutPosition <= window.innerHeight * 0.3) {
+        setIsDark(true);
+      } else {
+        setIsDark(false);
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
+
   return (
-      <nav className={`container ${location.pathname !== '/' ? 'dark-nav' : ''}`}>
+      <nav className={`container ${isDark ? 'dark-nav' : ''} ${location.pathname !== '/' ? 'dark-nav' : ''}`}>  
         <img src={logo} alt="Logo" className="logo" />
         <ul className={mobileMenu ? "" : "hide-mobile-menu"}>
           <li><Link to="/">{language === "en" ? "Home" : "Beranda"}</Link></li>
