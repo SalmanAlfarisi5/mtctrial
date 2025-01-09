@@ -16,11 +16,24 @@
 .client {
     width: 23%;
     text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.client:hover {
+    background-color: #212EA0;
+    color: white;
+    transform: translateY(-5px);
 }
 
 .client img {
     width: 100%;
     border-radius: 10px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
 }
 
 .client p {
@@ -40,6 +53,42 @@
 
 .btn:hover {
     background-color: #1a237e;
+}
+
+.client-page {
+    width: 45%;
+    padding: 30px;
+    text-align: left;
+}
+
+.client-page img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.client-page .company-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.client-page .company-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
 }
 
 @media (max-width: 800px) {
