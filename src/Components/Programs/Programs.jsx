@@ -160,32 +160,32 @@ const Programs = () => {
   };
 
   return (
-    <>
-      <div className={`programs ${modalVisible ? "blurred" : ""}`}>
-        {programsData[language].map((program, index) => (
-          <div
-            className="program"
-            key={index}
-            onClick={() => openModal(program.name, program.text)}
-          >
-            <img src={program.image} alt={program.name} />
-            <div className="caption">
-              <img src={program.icon} alt={program.name} />
-              <p>{program.name}</p>
-            </div>
+    <div className="programs">
+      {programsData[language].map((program, index) => (
+        <div className="program-card" key={index}>
+          <img src={program.image} alt={program.name} className="program-image" />
+          <div className="program-info">
+            <h3>{program.name}</h3>
+            <p>{program.text.substring(0, 80)}...</p>
+            <button
+              className="read-more"
+              onClick={() => openModal(program.name, program.text)}
+            >
+              Read More
+            </button>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
 
       {modalVisible && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content">
-            <h3 className="modal-title">{modalContent.title}</h3>
+            <h3>{modalContent.title}</h3>
             <p>{modalContent.text}</p>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
