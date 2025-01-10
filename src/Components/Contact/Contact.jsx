@@ -9,7 +9,7 @@ import whatsapp_icon from "../../assets/whatsapp-icon.png";
 import { useLanguage } from "../../LanguageContext";
 
 const Contact = () => {
-  const { language } = useLanguage(); // Get the current language
+  const { language } = useLanguage(); 
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event) => {

@@ -20,6 +20,9 @@
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
 }
 
 .client:hover {
@@ -31,28 +34,12 @@
 .client img {
     width: 100%;
     border-radius: 10px;
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0 cover 30%;
 }
 
 .client p {
     margin-top: 10px;
     font-size: 14px;
     font-weight: bold;
-}
-
-.btn {
-    padding: 10px 20px;
-    background-color: #212EA0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #1a237e;
 }
 
 .client-page {
