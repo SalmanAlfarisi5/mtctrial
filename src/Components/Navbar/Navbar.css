@@ -103,3 +103,15 @@ nav ul li {
         right: -200px;
     }
 }
+
+@media (max-width: 450px) {
+    .logo {
+        width: 70px;
+        height: 40px;
+    }
+
+    .flag {
+        width: 24px;
+        height: 16;
+    }
+}
