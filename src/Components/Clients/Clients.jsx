@@ -1,6 +1,5 @@
 import React from "react";
 import "./Clients.css";
-import { useLocation } from "react-router-dom";
 import { useLanguage } from "../../LanguageContext";
 import photo1 from "../../assets/photo-1.png";
 import photo2 from "../../assets/photo-2.png";
@@ -13,8 +12,7 @@ import photo8 from "../../assets/photo-8.png";
 import photo9 from "../../assets/photo-9.png";
 
 const Clients = () => {
-  const location = useLocation();
-  const showDescription = location.pathname === "/clients";
+
   const { language } = useLanguage(); 
 
   const clientsData = [
@@ -105,20 +103,16 @@ const Clients = () => {
     <div className="clients">
       <div className="gallery">
         {clientsData.map((client, index) => (
-          <div className={`client ${showDescription ? "client-page" : ""}`} key={index}>
+          <div className="client client-page" key={index}>
             <img src={client.img} alt={client.name_en} />
-            {showDescription && (
-              <>
-                <p className="company-name">
-                  {language === "en" ? client.name_en : client.name_id}
-                </p>
-                <p className="company-description">
-                  {language === "en"
-                    ? client.description_en
-                    : client.description_id}
-                </p>
-              </>
-            )}
+            <p className="company-name">
+              {language === "en" ? client.name_en : client.name_id}
+            </p>
+            <p className="company-description">
+              {language === "en"
+                ? client.description_en
+                : client.description_id}
+            </p>
           </div>
         ))}
       </div>

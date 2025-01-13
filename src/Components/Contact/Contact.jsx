@@ -17,7 +17,7 @@ const Contact = () => {
     setResult(language === "en" ? "Sending..." : "Mengirim...");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "08006ccb-5fe6-4f60-b04a-91623afb8034");
+    formData.append("access_key", "9d10af77-a8c8-49bf-957f-250dacda6f6e");
 
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
