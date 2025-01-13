@@ -42,7 +42,9 @@ const Navbar = () => {
 
   return (
       <nav className={`container ${isDark ? 'dark-nav' : ''} ${location.pathname !== '/' ? 'dark-nav' : ''}`}>  
-        <img src={logo} alt="Logo" className="logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
         <ul className={mobileMenu ? "" : "hide-mobile-menu"}>
           <li><Link to="/">{language === "en" ? "Home" : "Beranda"}</Link></li>
           <li><Link to="/programs">{language === "en" ? "Programs" : "Program"}</Link></li>
