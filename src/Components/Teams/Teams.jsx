@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./Teams.css";
 import next_icon from "../../assets/next-icon.png";
 import back_icon from "../../assets/back-icon.png";
@@ -90,12 +90,27 @@ const Teams = () => {
   const slider = useRef();
   const [modalVisible, setModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState({ text: "", img: "" });
-  const { language } = useLanguage(); // Get the current language
+  const { language } = useLanguage(); 
+  const [direction, setDirection] = useState("right");
   let tx = 0;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (direction === "right") {
+        slideForward();
+      } else {
+        slideBackward();
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [direction]);
 
   const slideForward = () => {
     if (tx > -60) {
       tx -= 20;
+    } else {
+      setDirection("left");
     }
     slider.current.style.transform = `translateX(${tx}%)`;
   };
@@ -103,6 +118,8 @@ const Teams = () => {
   const slideBackward = () => {
     if (tx < 0) {
       tx += 20;
+    } else {
+      setDirection("right");
     }
     slider.current.style.transform = `translateX(${tx}%)`;
   };
