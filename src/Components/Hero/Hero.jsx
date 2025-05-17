@@ -14,7 +14,7 @@ const Hero = () => {
             : "Konsultasi Pajak untuk Bisnis Anda"}
         </h1>
         <a
-          href="https://drive.google.com/file/d/1VKNeaj9ISnw_zEUqvzgxsu3fbFvhX7O2/view?usp=sharing"
+          href="https://drive.google.com/file/d/1_7oyZuAySiUPN0ZS4ww6VYfpmhNDi9D8/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="btn"
